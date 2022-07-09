@@ -1,0 +1,91 @@
+﻿@using BusinessLogic.DomainModels.CourseDomainMoel
+@model AllCoursesViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid">
+    <h1>Courses</h1>
+    @if (this.TempData["InfoMessage"] != null)
+{
+    <div class="alert alert-success">
+        @this.TempData["InfoMessage"]
+    </div>
+}
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Difficulty</th>
+                            <th>Stidents Count</th>
+                            <th>Votes Count</th>
+                            <th>IsRunning</th>
+                            <th>Students | Modules | Materials</th>
+                            <th>Edit | Details | Delete</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Difficulty</th>
+                            <th>Stidents Count</th>
+                            <th>Votes Count</th>
+                            <th>IsRunning</th>
+                            <th>Students | Modules | Materials</th>
+                            <th>Edit | Details | Delete</th>
+                    </tfoot>
+                    <tbody>
+
+                        @foreach (var course in Model.Courses)
+                        {
+                            <tr>
+                                <td>@course.Name</td>
+                                <td>@course.Description</td>
+                                <td>@course.Difficulty</td>
+                                <td>@course.StidentCount</td>
+                                <td>@course.VotesCount</td>
+                                <td>@course.IsRunning</td>
+                                <td>
+                                    <a asp-action="CourseStudents" asp-route-id="@course.Id">Students</a> |
+                                    <a asp-action="CourseModules" asp-route-id="@course.Id">Modules</a> |
+                                    <a asp-action="CourseMaterials" asp-route-id="@course.Id">Materials</a>
+                                </td>
+                                <td>
+                                    <a class="editCourse" asp-action="Edit" dataId=@course.IsRunning asp-route-id="@course.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@course.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@course.Id">Delete</a>
+                                </td>
+
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<p>
+    <a asp-action="Index">All</a>
+</p>
+
+@section Scripts
+{
+    <script src="~/js/test.js"> </script>
+}
+  
+
+

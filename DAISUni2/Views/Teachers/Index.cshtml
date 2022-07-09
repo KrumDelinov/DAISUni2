@@ -1,0 +1,82 @@
+﻿@model BusinessLogic.DomainModels.TeacherDomainModels.AllTeachersViewModel
+
+@{
+    ViewData["Title"] = "Teachers";
+}
+
+
+<div class="container-fluid">
+    <h1>Teachers</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Email</th>
+                            <th>HiredOn</th>
+                            <th>Edit | Details | Delete</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Email</th>
+                            <th>HiredOn</th>
+                            <th>Edit | Details | Delete</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+
+                        @foreach (var teacher in Model.Teachers)
+                        {
+                            <tr>
+                                <td>@teacher.FirstName</td>
+                                <td>@teacher.LastName</td>
+                                <td>@teacher.Email</td>
+                                <td>@teacher.HiredOn</td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@teacher.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@teacher.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@teacher.Id">Delete</a>
+                                </td>
+
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Download Report</h3>
+                </div>
+                <form autocomplete="off" asp-controller="Teachers" asp-antiforgery="true" asp-action="Index" method="post">
+                    <div class="card-body register-card-body">
+                        <div class="form-row">
+                            <button type="submit" id="btnsubmit" class="btn btn-success">Export to Excel</button>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
+
+
+

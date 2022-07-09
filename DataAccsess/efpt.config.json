@@ -1,0 +1,95 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "DAISUni2Context",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "DbContexts",
+   "OutputPath": "Entities",
+   "ProjectRootNamespace": "DataAccsess",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Answers]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Courses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Materials]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Modules]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Questions]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Roles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Students]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[StudentsCourses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Teachers]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TeachersCourses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TestResults]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tests]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Users]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UsersRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Votes]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "DESKTOP-E2HSE8H.DAISUni2",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": true,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

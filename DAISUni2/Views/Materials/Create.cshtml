@@ -1,0 +1,55 @@
+﻿@using BusinessLogic.DomainModels.MaterialDomainModels
+@using BusinessLogic.Enums
+@model CreateMaterialViewModel
+
+@{
+
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Material</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form enctype="multipart/form-data" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MaterialType" class="control-label"></label>
+                <select asp-for="MaterialType" class="form-control" asp-items="Html.GetEnumSelectList<MaterialType>()"></select>
+                <span asp-validation-for="MaterialType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaterialUrl" class="control-label"></label>
+                <input asp-for="MaterialUrl" class="form-control" />
+                <span asp-validation-for="MaterialUrl" class="text-danger"></span>
+            </div>
+            <dl>
+                <dt>
+                    <label asp-for="Content"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Content" type="file">
+                </dd>
+            </dl>
+            <div class="form-group">
+                <label asp-for="CoursesId" class="control-label"></label>
+                <select asp-for="CoursesId" class="form-control" asp-items="ViewBag.CoursesId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

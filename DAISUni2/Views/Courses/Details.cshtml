@@ -1,0 +1,74 @@
+﻿@using BusinessLogic.DomainModels.CourseDomainMoel
+@model CourseDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Difficulty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Difficulty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+   
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TeacherName)
+        </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MaterialsCount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaterialsCount)
+        </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SdudentsCount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SdudentsCount)
+        </dd>
+          <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModulesCount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModulesCount)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="AddStudents" asp-route-id="@Model?.Id" >AddStudent</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
